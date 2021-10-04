@@ -7,7 +7,6 @@ total = 0
 global_points = 80
 code_style_points = 10
 
-
 class TestClass:
 
     # static tests

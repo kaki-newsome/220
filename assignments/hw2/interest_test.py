@@ -35,7 +35,7 @@ class TestClass:
     def test_linting(self):
         global code_style_points
         global total
-        points = code_style.code_style('interest.py', code_style_points)
+        points = code_style.code_style('../../class notes/chapter 2/interest_in_class.py', code_style_points)
         total += points
         if not points == code_style_points:
             pytest.xfail(reason="Failed Code Style")
