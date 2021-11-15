@@ -1,0 +1,2 @@
+sum of squares = 42.18
+sum of squares = 272.29
