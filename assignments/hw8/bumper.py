@@ -41,7 +41,7 @@ def getminussidey(circle):
     return circleside
 
 
-def hit_horizontal(circle1, win):
+def hit_vertical(circle1, win):
     circle1right = getaddsidex(circle1)
     circle1left = getminussidex(circle1)
     circlecent = circle1.getCenter()
@@ -59,7 +59,7 @@ def hit_horizontal(circle1, win):
     return False
 
 
-def hit_vertical(circle1, win):
+def hit_horizontal(circle1, win):
     circle1top = getminussidey(circle1)
     circle1bottom = getaddsidey(circle1)
     circlecent = circle1.getCenter()

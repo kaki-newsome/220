@@ -13,69 +13,57 @@ I certify this assignment is entirely my own.
 from graphics import *
 
 
-def sentence():
-    sent = eval(input("Enter message you want to be encoded: "))
-    return sent
+def code(message, keyword):
+    msg_code = message.upper()
+    msg_code = msg_code.split()
 
+    key_code = keyword.upper()
 
-def key():
-    key = eval(input("Enter a key to encode with: "))
-    return key
+    msg_acc = ''
 
+    for i in msg_code:
+        msg_acc = msg_acc + i
 
-def entry1():
-    msg_butt = Entry(Point(300, 150), 25)
-    return msg_butt
+    alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    alph_acc = 0
 
+    for letter in alphabet:
+        
 
-def entry2():
-    key_butt = Entry(Point(300, 300), 15)
-    return key_butt
-
-
-def button():
-    outline = Rectangle(Point(200, 350), Point(300, 450))
-    return outline
-
-
-def butt_text():
-    butt_text = Text(Point(250, 400), "Encode it!")
-    return butt_text
-
-
-def msg_text():
-    msg_text = Text(Point(50, 150), "Message:")
-    return msg_text
-
-
-def key_text():
-    key_text = Text(Point(50, 300), "Key:")
-    return key_text
-
-
-def message_change():
-    sent = sentence()
-    sent = sent.upper()
-    return sent
 
 
 def main():
     win = GraphWin("Encoder", 500, 500)
 
-    msg_text().draw(win)
-    key_text().draw(win)
+    msg_ui = Entry(Point(300, 150), 25)
+    key_ui = Entry(Point(300, 300), 15)
 
-    entry1().draw(win)
-    entry2().draw(win)
+    msg_text = Text(Point(50, 150), "Message:")
+    key_text = Text(Point(50, 300), "Key:")
 
-    button().draw(win)
-    butt_text().draw(win)
+    outline = Rectangle(Point(200, 350), Point(300, 450))
+    butt_text = Text(Point(250, 400), "Encode it!")
 
-    # button().undraw()
-    # butt_text().undraw()
+    msg_text.draw(win)
+    key_text.draw(win)
+
+    msg_ui.draw(win)
+    key_ui.draw(win)
+
+    outline.draw(win)
+    butt_text.draw(win)
+
+    win.getMouse()
+
+    msg_code = msg_ui.getText()
+    key_code = key_ui.getText()
+
+    # print(msg_acc)
+    # print(key_code)
+
+    outline.undraw()
+    butt_text.undraw()
     # win.getMouse()
-
-    print(message_change())
 
     win.getMouse()
 
