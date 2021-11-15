@@ -1,6 +1,6 @@
 """
 Name: Kaki Newsome
-hangman.py
+hangman.py / lab11.py
 """
 from random import randint
 
