@@ -17,8 +17,10 @@ from button import Button
 def create_door(number, x_door, height):
     door = Rectangle(Point(x_door - 50, height / 2 - 70),
                      Point(x_door + 50, height / 2 + 70))
-    label = Text(Point(x_door, height / 2), "Door" + str(number))
-    return Button(door, label)
+    text = "Door" + str(number)
+    # Button.set_label(text, x_door, height / 2)
+    # label = Text(Point(x_door, height / 2), "Door" + str(number))
+    return Button(door, text)
 
 
 # def create_label(number, x_door, height):
@@ -35,9 +37,11 @@ def main():
         x_door = 127 * i
         button = create_door(i, x_door, height)
         button_list = button_list + [button]
+        button.set_label(Text(Point(x_door, height / 2), button.get_label()))
+        button.draw(win)
 
-    for door in button_list:
-        door.draw(win)
+    # for door in button_list:
+    #     door.draw(win, x_door, height / 2)
 
     point = win.getMouse()
     rand = randint(1, 3)

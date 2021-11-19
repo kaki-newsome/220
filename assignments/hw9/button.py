@@ -8,6 +8,7 @@ Certification of Authenticity:
 I certify this assignment is entirely my own.
 """
 
+from graphics import Text, Point, Rectangle
 
 class Button:
     """
